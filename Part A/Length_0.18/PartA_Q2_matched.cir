@@ -1,0 +1,10 @@
+CMOS Inverter Analysis
+.include MOSFET_models_0p5_0p18-1.inc
+VIN 1 0 PULSE(0 1.8 0 0.1n 0.1n 10n 20n)  ; Pulse input with rise and fall times of 0.1n and period 20n
+VVDD 3 0 DC 1.8
+M1 2 1 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M2 2 1 3 3 PMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+RL 2 4 1k
+CL 4 0 0.2p
+.tran 1n 20n; Transient analysis for one period of the input (20ns)
+.END
