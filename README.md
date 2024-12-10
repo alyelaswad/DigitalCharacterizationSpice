@@ -18,7 +18,7 @@ In Part A, the task is to perform a detailed characterization of a **CMOS invert
 3. **Power Consumption**: The average power dissipation of the inverter will be calculated at different input conditions, considering the effects of rise and fall times.
 
 The simulations will be conducted twice:
-- **Matched Design**: Where the width of the NMOS and PMOS transistors are designed to be equal.
+- **Matched Design**: Where the width of the NMOS and PMOS transistors are designed to account for the difference in mobility between electrons and holes, such that the current drive capabilities of both transistors are balanced. Specifically, the width of the PMOS transistor is scaled by the ratio \( \frac{\mu_n}{\mu_p} \) compared to the NMOS transistor.
 - **Minimum Area**: Where the design aims to minimize the area by adjusting the transistor sizes.
 
 ### Part B: 4-to-1 Multiplexer (MUX) and 1-to-4 Demultiplexer (DEMUX)
