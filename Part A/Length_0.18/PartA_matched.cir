@@ -2,7 +2,7 @@
 VIN 1 0 DC 5
 VVDD 3 0 DC 1.8
 M1 2 1 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
-M2 2 1 3 3 PMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M2 2 1 3 3 PMOS0P18 [w=4.04u l=0.18u As=2.1816p Ad=2.1816p ps=9.16u pd=9.16u]; notice that p is not exactly equal to 4.5n because kn' ≠ kp'
 RL 2 4 1k
 CL 4 0 0.2p
 .dc VIN 0V 5V 0.1V

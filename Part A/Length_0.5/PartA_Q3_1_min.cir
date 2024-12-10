@@ -3,7 +3,7 @@ CMOS Inverter Analysis
 VIN 1 0 DC 3.3
 VVDD 3 0 DC 3.3
 M1 2 1 0 0 NMOS0P5 [w=1.25u l=0.5u As=1.875p Ad=1.875p ps=5.5u pd=5.5u]
-M2 2 1 3 3 PMOS0P5 [w=2.5u l=0.5u As=3.75p Ad=3.75p ps=8u pd=8u]
+M2 2 1 3 3 PMOS0P5 [w=1.25u l=0.5u As=1.875p Ad=1.875p ps=5.5u pd=5.5u]
 RL 2 4 1k
 CL 4 0 0.5p
 .dc VIN 0V 5V 0.1V
