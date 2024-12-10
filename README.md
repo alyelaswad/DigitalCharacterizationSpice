@@ -52,8 +52,8 @@ For both Part A and Part B, the SPICE netlists will include the necessary compon
 - **Transistor Models**: The simulations will use standard MOSFET models (Level 1) for **0.18-μm CMOS technology**.
 
 ## Team Members
-- *Aly Elaswad
-- *Arwa Abdelkarim
-- #Kareem Elnaghy 
+- **Aly Elaswad**
+- **Arwa Abdelkarim**
+- **Kareem Elnaghy** 
 
 
