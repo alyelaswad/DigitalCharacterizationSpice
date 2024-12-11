@@ -1,0 +1,72 @@
+Demultiplexer Circuit
+.include MOSFET_models_0p5_0p18-1.inc
+
+*Voltage Sources
+
+VDD Vdd 0 1.8
+
+*Inputs
+
+VIN in 0 PULSE(0 1.8 0 1n 1n 1n 5n)
+VS1 S1 0 PULSE(0 1.8 0 1n 1n 1n 5n)
+VS0 S0 0 PULSE(0 1.8 0 1n 1n 1n 5n)
+
+*Inverter for input
+Mp1 x_bar in Vdd Vdd PMOS0P18 [w=4.04u l=0.18u As=2.1816p Ad=2.1816p ps=9.16u pd=9.16u]
+Mn1 x_bar in 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+* Inverter for S1_bar
+Mp2 S1_bar S1 Vdd Vdd PMOS0P18 [w=4.04u l=0.18u As=2.1816p Ad=2.1816p ps=9.16u pd=9.16u]
+Mn2 S1_bar S1 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+* Inverter for S0_bar
+Mp3 S0_bar S0 Vdd Vdd PMOS0P18 [w=4.04u l=0.18u As=2.1816p Ad=2.1816p ps=9.16u pd=9.16u]
+Mn3 S0_bar S0 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+*Circuit for Y0
+M1 N1 x_bar Vdd Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M2 N2 S1 N1 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M3 Y0 S0 N2 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+
+M4 Y0 x_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M5 Y0 S1 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M6 Y0 S0 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+*Circuit for Y1
+M7 N3 x_bar Vdd Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M8 N4 S1 N3 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M9 Y1 S0_bar N4 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+
+M10 Y1 x_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M11 Y1 S1 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M12 Y1 S0_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+*Circuit for Y2
+M13 N5 x_bar Vdd Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M14 N6 S1_bar N5 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M15 Y2 S0 N6 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+
+M16 Y2 x_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M17 Y2 S1_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M18 Y2 S0 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+*Circuit for Y3
+M19 N7 x_bar Vdd Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M20 N8 S1_bar N7 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+M21 Y3 S0_bar N8 Vdd PMOS0P18 [w=5.4u l=0.18u As=2.916p Ad=2.916p ps=11.88u pd=11.88u]
+
+M22 Y3 x_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M23 Y3 S1_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+M24 Y3 S0_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u]
+
+*Propagation Delay
+.measure TRAN tPLH TRIG V(in) VAL=0.9 RISE=1 TARG V(Y3) VAL=0.9 RISE=1
+.measure TRAN tPHL TRIG V(in) VAL=0.9 FALL=1 TARG V(Y3) VAL=0.9 FALL=1
+.measure TRAN tPD AVG tPLH tPHL
+
+*Average Power Dissipation
+.measure tran totalPower INTEG (V(Vdd)*Is(M19))
+.measure tran averagePower param = totalPower/100u
+
+.tran 1n 100u
+.END
