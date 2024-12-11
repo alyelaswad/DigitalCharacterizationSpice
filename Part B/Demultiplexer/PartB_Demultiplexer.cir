@@ -62,7 +62,6 @@ M24 Y3 S0_bar 0 0 NMOS0P18 [w=0.9u l=0.18u As=0.486p Ad=0.486p ps=2.88u pd=2.88u
 *Propagation Delay
 .measure TRAN tPLH TRIG V(in) VAL=0.9 RISE=1 TARG V(Y3) VAL=0.9 RISE=1
 .measure TRAN tPHL TRIG V(in) VAL=0.9 FALL=1 TARG V(Y3) VAL=0.9 FALL=1
-.measure TRAN tPD AVG tPLH tPHL
 
 *Average Power Dissipation
 .measure tran totalPower INTEG (V(Vdd)*Is(M19))
